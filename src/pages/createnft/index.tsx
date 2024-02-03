@@ -8,10 +8,17 @@ import {createNFTTransaction} from '@/utils/createNFTTransaction';
 import {sendTransactionWithSSS} from '@/utils/sendTransactionWithSSS';
 import { AggregateTransaction, MosaicId, Transaction, TransactionStatus } from 'symbol-sdk';
 
+// //SSS用設定
+// interface SSSWindow extends Window {
+//   SSS: any
+// }
+
 //SSS用設定
 interface SSSWindow extends Window {
-  SSS: any
+  SSS: any;
+  isAllowedSSS: () => boolean;
 }
+declare const window: SSSWindow;
 
 function CreateNFT(): JSX.Element {
   //共通設定
